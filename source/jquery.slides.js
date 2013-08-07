@@ -213,7 +213,7 @@
     };
     Plugin.prototype._setActive = function(number) {
       var $element, current;
-      $element = $(this.element);
+      $element = (this.options.pagination.custom) ? $(this.element).parent() : $(this.element);
       this.data = $.data(this);
       current = number > -1 ? number : this.data.current;
       $(".active", $element).removeClass("active");
